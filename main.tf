@@ -37,7 +37,7 @@ resource "azurerm_network_security_group" "demo" {
     destination_address_prefix = "10.0.0.0/16"
   }
 
-    security_rule {
+  security_rule {
     name                       = "http"
     priority                   = 102
     direction                  = "Inbound"
@@ -111,12 +111,12 @@ resource "azurerm_dns_a_record" "web-01" {
 }
 
 resource "azurerm_virtual_machine" "web-01" {
-  name                  = "web-01"
-  location              = azurerm_resource_group.demo.location
-  resource_group_name   = azurerm_resource_group.demo.name
-  network_interface_ids = ["${azurerm_network_interface.web-01.id}"]
-  vm_size               = "Standard_D2s_v3"
-  delete_os_disk_on_termination = true
+  name                             = "web-01"
+  location                         = azurerm_resource_group.demo.location
+  resource_group_name              = azurerm_resource_group.demo.name
+  network_interface_ids            = ["${azurerm_network_interface.web-01.id}"]
+  vm_size                          = "Standard_D2s_v3"
+  delete_os_disk_on_termination    = true
   delete_data_disks_on_termination = true
 
   storage_image_reference {
@@ -178,11 +178,11 @@ resource "azurerm_public_ip" "mgmt-01" {
 }
 
 resource "azurerm_virtual_machine" "mgmt-01" {
-  name                  = "mgmt-01"
-  location              = azurerm_resource_group.demo.location
-  resource_group_name   = azurerm_resource_group.demo.name
-  network_interface_ids = ["${azurerm_network_interface.mgmt-01.id}"]
-  vm_size               = "Standard_B2s"
+  name                          = "mgmt-01"
+  location                      = azurerm_resource_group.demo.location
+  resource_group_name           = azurerm_resource_group.demo.name
+  network_interface_ids         = ["${azurerm_network_interface.mgmt-01.id}"]
+  vm_size                       = "Standard_B2s"
   delete_os_disk_on_termination = true
 
   storage_image_reference {
