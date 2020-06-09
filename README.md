@@ -1,3 +1,4 @@
+![Terraform Testing and Release](https://github.com/mtharpe/terraform-azure-demo/workflows/Terraform%20Testing%20and%20Release/badge.svg)
 
 # terraform-aws-demo                                                                                                                                                        
 Terraform demo in aws 
