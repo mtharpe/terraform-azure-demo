@@ -3,5 +3,5 @@ variable "location" {
   default     = "East US"
 }
 
-variable "admin_username" {}
-variable "admin_password" {}
+variable "azure_instance_username" {}
+variable "azure_instance_password" {}

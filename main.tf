@@ -133,8 +133,8 @@ resource "azurerm_virtual_machine" "web-01" {
   }
   os_profile {
     computer_name  = "web-01"
-    admin_username = var.admin_username
-    admin_password = var.admin_password
+    admin_username = var.azure_instance_username
+    admin_password = var.azure_instance_password
     custom_data    = file("./scripts/cloud-config.txt")
   }
   os_profile_linux_config {
@@ -201,8 +201,8 @@ resource "azurerm_virtual_machine" "mgmt-01" {
 
   os_profile {
     computer_name  = "mgmt-01"
-    admin_username = var.admin_username
-    admin_password = var.admin_password
+    admin_username = var.azure_instance_username
+    admin_password = var.azure_instance_password
     custom_data    = file("./scripts/windows_setup.ps1")
   }
 
@@ -232,8 +232,8 @@ resource "azurerm_postgresql_server" "database-01" {
   storage_mb            = 5120
   backup_retention_days = 7
 
-  administrator_login          = var.admin_username
-  administrator_login_password = var.admin_password
+  administrator_login          = var.azure_instance_username
+  administrator_login_password = var.azure_instance_password
   version                      = "9.6"
   ssl_enforcement_enabled      = true
 }
