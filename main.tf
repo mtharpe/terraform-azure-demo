@@ -107,14 +107,14 @@ resource "azurerm_dns_a_record" "web-01" {
   zone_name           = azurerm_dns_zone.demo.name
   resource_group_name = azurerm_resource_group.demo.name
   ttl                 = 300
-  records             = ["${azurerm_network_interface.web-01.*.private_ip_address[0]}"]
+  records             = [azurerm_network_interface.web-01.*.private_ip_address[0]]
 }
 
 resource "azurerm_virtual_machine" "web-01" {
   name                             = "web-01"
   location                         = azurerm_resource_group.demo.location
   resource_group_name              = azurerm_resource_group.demo.name
-  network_interface_ids            = ["${azurerm_network_interface.web-01.id}"]
+  network_interface_ids            = [azurerm_network_interface.web-01.id]
   vm_size                          = "Standard_D2s_v3"
   delete_os_disk_on_termination    = true
   delete_data_disks_on_termination = true
@@ -163,7 +163,7 @@ resource "azurerm_dns_a_record" "mgmt-01" {
   zone_name           = azurerm_dns_zone.demo.name
   resource_group_name = azurerm_resource_group.demo.name
   ttl                 = 300
-  records             = ["${azurerm_network_interface.mgmt-01.*.private_ip_address[0]}"]
+  records             = [azurerm_network_interface.mgmt-01.*.private_ip_address[0]]
 }
 
 resource "azurerm_public_ip" "mgmt-01" {
@@ -181,7 +181,7 @@ resource "azurerm_virtual_machine" "mgmt-01" {
   name                          = "mgmt-01"
   location                      = azurerm_resource_group.demo.location
   resource_group_name           = azurerm_resource_group.demo.name
-  network_interface_ids         = ["${azurerm_network_interface.mgmt-01.id}"]
+  network_interface_ids         = [azurerm_network_interface.mgmt-01.id]
   vm_size                       = "Standard_B2s"
   delete_os_disk_on_termination = true
 
