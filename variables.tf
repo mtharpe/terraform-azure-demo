@@ -3,5 +3,9 @@ variable "location" {
   default     = "East US"
 }
 
-variable "azure_instance_username" {}
-variable "azure_instance_password" {}
+variable "azure_instance_username" {
+  description = " Azure Instance login username"
+}
+variable "azure_instance_password" {
+  description = " Azure Instance login password"
+}
