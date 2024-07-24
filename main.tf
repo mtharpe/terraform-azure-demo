@@ -116,7 +116,7 @@ resource "azurerm_dns_a_record" "web-01" {
   zone_name           = azurerm_dns_zone.demo.name
   resource_group_name = azurerm_resource_group.demo.name
   ttl                 = 300
-  records             = [azurerm_network_interface.web-01.*.private_ip_address[0]]
+  records             = [azurerm_network_interface.web-01[*].private_ip_address[0]]
 }
 
 resource "azurerm_virtual_machine" "web-01" {
@@ -172,7 +172,7 @@ resource "azurerm_dns_a_record" "mgmt-01" {
   zone_name           = azurerm_dns_zone.demo.name
   resource_group_name = azurerm_resource_group.demo.name
   ttl                 = 300
-  records             = [azurerm_network_interface.mgmt-01.*.private_ip_address[0]]
+  records             = [azurerm_network_interface.mgmt-01[*].private_ip_address[0]]
 }
 
 resource "azurerm_public_ip" "mgmt-01" {
