@@ -28,7 +28,7 @@ No output.
 
 ## License and Maintainer
 
-Maintainer:: HashiCorp (<hello@hashicorp.com>)
+Maintainer:: Michael Tharpe
 
 Source:: https://github.com/mtharpe/terraform-azure-demo
 
