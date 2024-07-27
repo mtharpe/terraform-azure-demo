@@ -1,8 +1,8 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/mtharpe/terraform-azure-demo/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mtharpe/terraform-azure-demo/tree/master)
 
 
-# terraform-aws-demo                                                                                                                                                        
-Terraform demo in aws 
+# terraform-azure-demo                                                                                                                                                        
+Terraform demo in Azure 
 
 ## Requirements
 
