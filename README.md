@@ -1,5 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mtharpe/terraform-azure-demo/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mtharpe/terraform-azure-demo/tree/master)
-
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mtharpe/terraform-azure-demo/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mtharpe/terraform-azure-demo/tree/main)
 
 # terraform-azure-demo                                                                                                                                                        
 Terraform demo in Azure 
